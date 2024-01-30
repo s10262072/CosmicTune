@@ -1,9 +1,25 @@
+
+h1, h2, h3,small{
+    color:white;
+}
+
+nav{
+    background-color: black;
+}
+.container-fluid{
+    background-color: black;
+}
+
 .navbar{
     min-height:100px;
+    background-color: black;
 }
 .navbar-brand img{
-    width:150px;
+    width:250px;
     height:100px;
+}
+.nav-link{
+    color:white;
 }
 .carousel-item img{
     width:max-content;
@@ -12,7 +28,9 @@
 .form{
     padding:100px;
 }
-
+.form-text{
+    color:#444444
+}
 #exampleInputName,#exampleInputDescription,#exampleInputEmail1{
     width:600px;
 }
@@ -27,15 +45,19 @@
 
 body {
     font-family: "Poppins", sans-serif;
-    color: #444444;
+    color: white;
+    background-color: black;
 }
 
-a,
-a:hover {
-    text-decoration: none;
-    color: inherit;
+a{
+    color:white;
 }
-
+p{
+    color:white;
+}
+.text-body-secondary{
+    color:white;
+}
 .section-products {
     padding: 80px 0 54px;
 }
@@ -184,4 +206,5 @@ a:hover {
     background-color: #444444;
     transform: translateY(-50%);
 }
+
 
