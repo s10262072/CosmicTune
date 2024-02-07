@@ -32,7 +32,7 @@ $(function () {
         $("input[data-type=time]").datetimepicker({datepicker:false,format:"H:i",value:"12:00"}).attr("type","text");
     }
   
-    $("#login-form input[data-type=file], #login-form input[data-type=image]").on("change",function(){
+    $("#register-form input[data-type=file], #register-form input[data-type=image]").on("change",function(){
       $(this).data("uploadedfiles",[]);    
     });
     var apikey = "{{settings.formapikey}}"; // TODO: INSERT YOUR CORS API KEY HERE OR add formapikey to settings
@@ -42,7 +42,7 @@ $(function () {
     var ajaxSettings = {
       "async": true,
       "crossDomain": true,
-      "url": "https://idcosmictune-32e9.restdb.io/rest/login",
+      "url": "https://idcosmictune-32e9.restdb.io/rest/register",
       "method": "POST",
       "headers": {
         "x-apikey": "65bf65847627ece89f31a349",
@@ -131,8 +131,8 @@ $(function () {
     function postForm() {
   
       // clear errors
-      $("#login-form .has-error").removeClass("has-error");
-      $("#login-form .help-block").remove();
+      $("#register-form .has-error").removeClass("has-error");
+      $("#register-form .help-block").remove();
   
       $("#btn-submit").button("loading");
   
@@ -168,12 +168,12 @@ $(function () {
   
   
    // get the form data
-      var formObj = $("#login-form").serializeObject();
+      var formObj = $("#register-form").serializeObject();
   
       // get attachments from inputs
       var attachments = [];
   
-      $("#login-form input[data-type=file], #login-form input[data-type=image]").each(function(input){
+      $("#register-form input[data-type=file], #register-form input[data-type=image]").each(function(input){
         var files = $(this)[0].files;
         if(files && files.length>0){
           attachments.push($(this));
@@ -200,7 +200,7 @@ $(function () {
           $.ajax(ajaxSettings)
           .done(function (response) {
             // replaces form with a thank you message, please replace with your own functionality
-            $("#login-form").replaceWith("<div class='thank-you'>"+successMessage+"</div>");
+            $("#register-form").replaceWith("<div class='thank-you'>"+successMessage+"</div>");
           })
           .fail(function (response) {
             $("#btn-submit").button("reset");
@@ -219,7 +219,7 @@ $(function () {
               });
             }
             else{
-              var msg = (ajaxSettings.headers["65bf65847627ece89f31a349"] && ajaxSettings.headers["65bf65847627ece89f31a349"].length < 24) ? "Missing API-key": "Server Error";
+              var msg = (ajaxSettings.headers["x-apikey"] && ajaxSettings.headers["65bf65847627ece89f31a349"].length < 24) ? "Missing API-key": "Server Error";
               alert(msg);
             }
           });
@@ -238,11 +238,11 @@ $(function () {
         });
     };
   
-    $("#login-form").submit(function (event) {
+    $("#register-form").submit(function (event) {
           postForm();
           event.preventDefault();
           return false;
       });
   });
-
+  
   

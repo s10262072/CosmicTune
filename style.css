@@ -1,10 +1,10 @@
 
-h1, h2, h3,small,a{
+h1, h2, h3,small,a,label{
     color:white;
 }
 
 nav{
-    background-color: black;
+    background-image:url("starfield-dark-background-sgli8iwvguwxzovr.gif")
 }
 .container-fluid{
     background-color: black;
@@ -12,7 +12,7 @@ nav{
 
 .navbar{
     min-height:100px;
-    background-color: black;
+   
 }
 .navbar-brand img{
     width:250px;
@@ -31,7 +31,7 @@ nav{
     padding:100px;
 }
 .form-text{
-    color:#444444
+    color: #a5b1c0
 }
 #exampleInputName,#exampleInputDescription,#exampleInputEmail1{
     width:600px;
@@ -43,12 +43,39 @@ nav{
     padding: 50px;
     color:white;
 }
+.thank-you{
+    font-size: 16px;
+    padding: 20px;	
+  }
+  #login-form, #register-form{
+    padding: 200px;
+  }
+  #login-form,#register-form input,  #login-form, #register-form select{
+    width: 500px;
+  }
+  label{
+    display: block;
+  }
+  .form-control{
+    width: auto;
+  }
+  .help-block{
+    margin-left:10px;
+  }
+  .progress{
+    width: 300px;
+    height:10px;
+    border-radius:0px;
+    margin-top: 2px;
+  }
+  #btn-submit{
+      width: 300px;
+  }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
 body {
     font-family: "Poppins", sans-serif;
-    color: white;
-    background-color: black;
+    background-image:url("starfield-dark-background-sgli8iwvguwxzovr.gif")
 }
 
 footer a{
@@ -205,5 +232,45 @@ footer a{
     background-color: white;
     transform: translateY(-50%);
 }
+.puzzle-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+  }
+  
+  .tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+    font-size: 24px;
+    cursor: pointer;
+  }
 
+  .creditcard img{
+    width:200px;
+  }
 
+  .success-box h1{
+    background-color: #ffffff;
+    color: black;
+    padding: 100px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .image-container {
+    position: relative;
+}
+
+.image-text {
+    position: absolute;
+    bottom: 10px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+    color: white; /* Text color */
+    font-size: 20px; /* Font size */
+    font-weight: bold; /* Font weight */
+    background-color: rgba(0, 0, 0, 0.5); /* Background color with transparency */
+    padding: 5px 10px; /* Padding */
+}
